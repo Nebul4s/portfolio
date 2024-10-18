@@ -1,0 +1,139 @@
+@import "./_Variables.scss";
+
+.page--container {
+  width: 100%;
+  .page--cta__container {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    background-color: $color1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .cta--content__container {
+      display: flex;
+      flex-direction: column;
+      padding: 7.2rem;
+      gap: 4.8rem;
+
+      .cta--heading {
+        color: $color2;
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+        h1 {
+          font-size: 4.8rem;
+          font-weight: 500;
+        }
+        h2 {
+          font-weight: 300;
+          font-size: 2rem;
+        }
+      }
+      .cta--button {
+        border: 1px solid $color2;
+        color: $color2;
+        cursor: pointer;
+        background: none;
+        padding: 2.4rem;
+        border-radius: 10rem;
+        width: fit-content;
+
+        transition: 0.2s ease-in-out;
+        span {
+          font-size: 1.8rem;
+        }
+        &:hover {
+          background-color: $color2;
+          color: #fff;
+        }
+      }
+      .cta--links {
+        margin-right: auto;
+        span {
+          color: $color8;
+          a {
+            text-decoration: none;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  .page--content__container {
+    height: 100%;
+    width: 50%;
+    margin-left: 50%;
+    background-color: black;
+    position: relative;
+
+    .content--slide {
+      width: 100%;
+      height: 100vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      overflow-x: hidden;
+    }
+
+    .photo {
+      width: 100%;
+      height: 100%;
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+      .image--gradient {
+        background-color: $color2;
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        opacity: 0.2;
+      }
+    }
+    .about {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      align-items: flex-start;
+      gap: 4.8rem;
+      padding: 4.8rem;
+      color: $color7;
+      .about--maintext__container {
+        h2 {
+          font-size: 4.8rem;
+          margin-bottom: 1.2rem;
+        }
+        .about--text {
+          font-size: 2.8rem;
+        }
+      }
+      .about--details__container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        h4 {
+          font-size: 2.4rem;
+        }
+        span {
+          color: $color8;
+        }
+      }
+    }
+    .k {
+      background-color: $color4;
+    }
+    .o {
+      background-color: $color2;
+    }
+  }
+}
