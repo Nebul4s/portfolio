@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Freelance full-stack web developer from Finland</title>
+    <link rel="icon" href=
+    "./assets/headshot.png"
+            type="image/x-icon" />
     <link rel="stylesheet" href="./css/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,20 +14,100 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <script src="./js/index.js"></script>
+    <script src="./js/index.js" defer></script>
   </head>
   <body>
     <section class="page--container">
+      <div class="page--gradient"></div>
+      <div class="form--window__container">
+        <div class="form--window__inner">
+
+          <section class="form--window">
+            <!-- probably need to do this in javascript to account for 3 different forms using inseradjacentHTML -->
+            <!-- also insert the contact option element as copy paste here in javascript using ^ -->
+          <div class="contact--form__header">
+            
+            <div class="contact--option book">
+              <img class="book--image" src="./assets/man.svg"/>
+              <span>I'd like to book you in</span>
+            </div>
+            <img src="./assets/close.svg" class="close--icon"/>
+          </div>
+          <form>
+            <div class="form--input__container">
+              <label>Name</label>
+              <input type="text"/>
+            </div>
+            <div class="form--input__container">
+              <label>Email</label>
+              <input type="text"/>
+            </div>
+            <div class="form--input__container">
+              <label>Company</label>
+              <input type="text"/>
+            </div>
+            <div class="form--input__container">
+              <label>Budget</label>
+              <input type="text"/>
+            </div>
+            <div class="form--date__container">
+              <div class="form--date">
+                <label>Start date</label>
+                <input type="date"/>
+              </div>
+              <div class="form--date">
+                <label>Start date</label>
+                <input type="date"/>
+              </div>
+            </div>
+            <div class="form--message__container">
+              <label>Message</label>
+              <textarea></textarea>
+            </div>
+            <button class="send--button">
+              <span>Send</span>
+            </button>
+            
+          </form>
+        </section>
+      </div>
+      </div>
       <div class="page--cta__container">
+        <div class="menu--container">
+          <img src="./assets/menu.svg" class="menu--icon"/>
+          <div class="menu">
+            <ul>
+              <li onclick="scrollToSection('about')">
+              <span>
+                  About
+              </span>
+            </li>
+              <li onclick="scrollToSection('projects')">
+              <span>
+                  Projects
+              </span>
+            </li>
+              <li onclick="scrollToSection('reviews')">
+                <span>
+                  Reviews
+              </span>
+            </li>
+              <li onclick="scrollToSection('contactOptions')">
+                <span>
+                  Contact
+              </span>
+            </li>
+            </ul>
+          </div>
+        </div>
         <div class="cta--content__container">
           <div class="cta--heading">
-            <h1>Hello. I'm a freelance user interface developer</h1>
+            <h1>Hello. I'm a freelance web developer</h1>
             <h2>
-              My name's Jere Hiltula. I craft user interfaces using modern
-              frontend web technologies.
+              I’m Jere Hiltula, a full stack web developer crafting dynamic web applications with modern technologies for seamless user experiences.
             </h2>
           </div>
-          <button class="cta--button">
+          <button class="cta--button"  onclick="location.href='#contactOptions'">
             <span>Let's work together!</span>
           </button>
           <div class="cta--links">
@@ -39,49 +122,112 @@
           <img src="./assets/headshot.png" alt="photo" />
           <div class="image--gradient"></div>
         </div>
+        <!-- This is a necessary empty div for the navigation due to design choices (each content--slide is sticky and stack ontop of each other) -->
+        <div id="about"></div> 
         <div class="content--slide about">
           <div class="about--maintext__container">
             <h2>About me</h2>
             <span class="about--text"
-              >I enjoy working closely with design teams to faithfully translate
-              their designs right down to the last pixel. Daily, you'll find me
-              using modern frontend technologies that bring the creative process
-              to life just as designers intended them to be.</span
+              >I enjoy working closely with design teams to translate their designs
+              right down to the last pixel. I'm also capable of making a professional 
+              design that suits your needs. I'd be honored to bring your idea or 
+              existing design to life.</span
             >
           </div>
           <div class="about--details__container">
             <h4>Technical</h4>
             <span
-              >Right now you can find me hacking away primarily with Vue, Nuxt,
-              Storyblok, Prismic, GraphQL, Netflify, React and in general
-              anything JavaScript / TypeScript, HTML and CSS related.</span
+              >Usually i work with React, Mongodb, Express, Node or Firebase,
+              but I'm able to learn and adapt the technology your project needs so
+              don't hesitate to ask whether I could bring your project to life using the
+              technologies you need your project to be built on.</span
             >
             <h4>Personal</h4>
             <span
-              >I grew up in Nottingham and moved to London many years ago. Being
-              half Italian and half British, I try to visit family in Sicily
-              whenever I can to practice (struggling) with the basics of the
-              language.</span
+              >I'm a passionate software developer from Oulu, Finland,
+              other interests of mine are culture and many forms of art.
+              Currently I also study IT in the Oulu University of Applied Sciences
+              and do freelancing on the side.</span
             >
           </div>
         </div>
-        <div class="content--slide k">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-            veritatis nobis, quo, hic odio sequi, exercitationem saepe deserunt
-            impedit possimus vero laudantium animi dicta accusantium nemo!
-            Aliquam sunt cumque sint.
-          </p>
+        <!-- This is a necessary empty div for the navigation due to design choices (each content--slide is sticky and stack ontop of each other) -->
+        <div id="projects"></div> 
+        <div class="content--slide projects">
+          <div class="projects--heading">
+            <h2>Projects I have worked on</h2>
+            <h3>Swipe or drag below to see a small selection of projects I've worked on. Click on a project card for expanded view</h3>
+          </div>
+          <div class="cards--container">
+            <div class="project--card">
+              <img src="./assets/projectTMP.jpg" class="card__image card__image--1"/>
+              <div class="card__text-container">
+                <h2 class="card__header">This is the header</h2>
+                <p class="card__body-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis repellendus ducimus cum officiis quidem doloremque laborum eos nesciunt odio sint impedit eaque sit optio ipsa, voluptate accusamus maiores dignissimos pariatur.</p>
+              </div>
+            </div>
+            <div class="project--card">
+              <img src="./assets/projectTMP.jpg" class="card__image card__image--1"/>
+              <div class="card__text-container">
+                <h2 class="card__header">This is the header</h2>
+                <p class="card__body-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis repellendus ducimus cum officiis quidem doloremque laborum eos nesciunt odio sint impedit eaque sit optio ipsa, voluptate accusamus maiores dignissimos pariatur.</p>
+              </div>
+            </div>
+            <div class="project--card">
+              <img src="./assets/projectTMP.jpg" class="card__image card__image--1"/>
+              <div class="card__text-container">
+                <h2 class="card__header">This is the header</h2>
+                <p class="card__body-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis repellendus ducimus cum officiis quidem doloremque laborum eos nesciunt odio sint impedit eaque sit optio ipsa, voluptate accusamus maiores dignissimos pariatur.</p>
+              </div>
+            </div>
+            </div>
+          </div>
+          <!-- This is a necessary empty div for the navigation due to design choices (each content--slide is sticky and stack ontop of each other) -->
+          <div id="reviews"></div> 
+          <div class="content--slide reviews">
+            <div class="review--container">
+              <div class="review--content__container">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
+                  veritatis nobis, quo, hic odio sequi, exercitationem saepe deserunt
+                  impedit possimus vero laudantium animi dicta accusantium nemo!
+                  Aliquam sunt cumque sint.
+                </p>
+                <div class="review--sender__container">
+                  <h2 class="review--name">Matti Meikäläinen</h2>
+                  <h3 class="title">CEO of an industry</h3>
+                </div>
+              </div>
+              <div class="dots--container">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+            </div>
         </div>
-        <div class="content--slide o">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-            veritatis nobis, quo, hic odio sequi, exercitationem saepe deserunt
-            impedit possimus vero laudantium animi dicta accusantium nemo!
-            Aliquam sunt cumque sint.
-          </p>
+        <!-- This is a necessary empty div for the navigation due to design choices (each content--slide is sticky and stack ontop of each other) -->
+        <div id="contactOptions"></div> 
+        <div class="content--slide contact">
+          <h2>Contact me</h2>
+          <h3>Don't be shy!</h3>
+          <span>If you have a project in mind or would like to make an enquiry simply select one of the following options.</span>
+          <div class="contact--options__container">
+            <div class="contact--option book">
+              <img class="book--image" src="./assets/man.svg"/>
+              <span>I'd like to book you in</span>
+            </div>
+            <div class="contact--option quote">
+              <img class="quote--image" src="./assets/banknotes.svg"/>
+              <span>I'd like a quote for a project</span>
+            </div>
+            <div class="contact--option hello">
+              <img class="hello--image" src="./assets/wave.svg"/>
+              <span>I'd just like to say hello!'</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+
   </body>
 </html>

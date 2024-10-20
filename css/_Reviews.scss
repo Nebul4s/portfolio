@@ -1,0 +1,43 @@
+.reviews {
+    background-color: $color3;
+    .review--container{
+      display: flex;
+      flex-direction: column;
+      gap: 3.6rem;
+      padding: 9.2rem;
+      color: $color7;
+      .review--content__container{
+        p{
+          font-size: 3.4rem;
+          font-weight: 400;
+        }
+        .review--sender__container{
+          display: flex;
+          flex-direction: column;
+          gap: 0.6rem;
+          .review--name{
+            font-size: 2.2rem;
+            font-weight: 500;
+          }
+          .title{
+            font-size: 1.8rem;
+            font-weight: 400;
+          }
+        }
+      }
+      .dots--container{
+        display: flex;
+        gap: 1.2rem;
+        .dot{
+          background-color: #ffcacd;
+          border-radius: 100000rem;
+          width: 1.2rem;
+          height: 1.2rem;
+          cursor: pointer;
+          &.active{
+            background-color: #fff;
+          }
+        }
+      }
+    }
+  }

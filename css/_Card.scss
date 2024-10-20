@@ -1,0 +1,23 @@
+.cards--container{
+    display: flex;
+    gap: 2.4rem;
+    .project--card {
+        border-radius: 1rem;
+        box-shadow: 0 5px 15px -4px #000;
+        height: 50rem;
+        overflow: hidden;
+        padding: 20rem;
+        position: relative;
+        width: 25rem;
+        .card__image {
+            background: cover;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            transition: transform .2s ease-in-out;
+            width: 100%;
+        }
+    }
+
+}

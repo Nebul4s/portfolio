@@ -1,0 +1,144 @@
+.form--window__container{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 2;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.active{
+        pointer-events: all;
+    }
+    .form--window__inner{
+        width: 30%;
+        height: 90%;
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+    .form--window{
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        border-radius: 1rem;
+        padding: 2.4rem;
+        overflow-y: scroll;
+
+        transform: scale(0);
+        transition: transform 0.2s ease-in-out;
+        &.active{
+            transform: scale(1);
+        }
+        .contact--form__header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.2rem;
+            img{
+                cursor: pointer;
+            }
+        }
+        .form--input__container{
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-bottom: 1.2rem;
+            input{
+                padding: 1.2rem;
+                border-radius: 0.5rem;
+                font-size: 1.8rem;
+                border: none;
+                background-color: #f7f7f7;
+                &:focus{
+                    border: 1px solid #2e2f4b;
+                    outline: none;
+                }
+            }
+        }
+        .form--date__container{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.2rem;
+            gap: 1.2rem;
+            .form--date{
+                display: flex;
+                flex-direction: column;
+                gap: 1.2rem;
+                width: 50%;
+                input{
+                    padding: 1.2rem;
+                    border-radius: 1rem;
+                    font-size: 1.8rem;
+                    border: none;
+                    background-color: #f7f7f7;
+                }
+            }
+        }
+        .form--message__container{
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            textarea{
+                height: 30rem;
+                padding: 1.2rem;
+                border-radius: 1rem;
+                font-size: 1.8rem;
+                border: none;
+                background-color: #f7f7f7;
+                &:focus{
+                    border: 1px solid #2e2f4b;
+                    outline: none;
+                }
+            }
+        }
+        .contact--option{
+            display: flex;
+            padding: 1.2rem 0;
+            gap: 2.4rem;
+            align-items: center;
+            cursor: pointer;
+            
+            img{
+              width: 5.4rem;
+              height: 5.4rem;
+              border-radius: 10000rem;
+              padding: 0.2rem;
+            }
+            .book--image{
+              background-color: $pic--color1;
+            }
+            .quote--image{
+              background-color: $pic--color2;
+            }
+            .hello--image{
+              background-color: $pic--color3;
+              padding: 1rem;
+            }
+            span{
+              font-size: 2rem;
+              font-weight: 400;
+              color: $color7;
+            }
+          }
+          .send--button {
+            margin-top: 1.2rem;
+            border: 1px solid $color2;
+            color: $color2;
+            cursor: pointer;
+            background: none;
+            padding: 2.4rem;
+            border-radius: 10rem;
+            width: fit-content;
+    
+            transition: 0.2s ease-in-out;
+            span {
+              font-size: 1.8rem;
+            }
+            &:hover {
+              background-color: $color2;
+              color: #fff;
+            }
+          }
+        
+    }
+}

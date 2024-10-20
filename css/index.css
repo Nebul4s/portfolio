@@ -10,6 +10,7 @@ body {
 
 html {
   font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
 }
 
 #root {
@@ -24,6 +25,160 @@ html {
 .page--container {
   width: 100%;
 }
+.page--container .form--window__container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 2;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page--container .form--window__container.active {
+  pointer-events: all;
+}
+.page--container .form--window__container .form--window__inner {
+  width: 30%;
+  height: 90%;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.page--container .form--window__container .form--window {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 1rem;
+  padding: 2.4rem;
+  overflow-y: scroll;
+  transform: scale(0);
+  transition: transform 0.2s ease-in-out;
+}
+.page--container .form--window__container .form--window.active {
+  transform: scale(1);
+}
+.page--container .form--window__container .form--window .contact--form__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+.page--container .form--window__container .form--window .contact--form__header img {
+  cursor: pointer;
+}
+.page--container .form--window__container .form--window .form--input__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.page--container .form--window__container .form--window .form--input__container input {
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+  font-size: 1.8rem;
+  border: none;
+  background-color: #f7f7f7;
+}
+.page--container .form--window__container .form--window .form--input__container input:focus {
+  border: 1px solid #2e2f4b;
+  outline: none;
+}
+.page--container .form--window__container .form--window .form--date__container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+  gap: 1.2rem;
+}
+.page--container .form--window__container .form--window .form--date__container .form--date {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 50%;
+}
+.page--container .form--window__container .form--window .form--date__container .form--date input {
+  padding: 1.2rem;
+  border-radius: 1rem;
+  font-size: 1.8rem;
+  border: none;
+  background-color: #f7f7f7;
+}
+.page--container .form--window__container .form--window .form--message__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.page--container .form--window__container .form--window .form--message__container textarea {
+  height: 30rem;
+  padding: 1.2rem;
+  border-radius: 1rem;
+  font-size: 1.8rem;
+  border: none;
+  background-color: #f7f7f7;
+}
+.page--container .form--window__container .form--window .form--message__container textarea:focus {
+  border: 1px solid #2e2f4b;
+  outline: none;
+}
+.page--container .form--window__container .form--window .contact--option {
+  display: flex;
+  padding: 1.2rem 0;
+  gap: 2.4rem;
+  align-items: center;
+  cursor: pointer;
+}
+.page--container .form--window__container .form--window .contact--option img {
+  width: 5.4rem;
+  height: 5.4rem;
+  border-radius: 10000rem;
+  padding: 0.2rem;
+}
+.page--container .form--window__container .form--window .contact--option .book--image {
+  background-color: #fe8f8e;
+}
+.page--container .form--window__container .form--window .contact--option .quote--image {
+  background-color: #fae38a;
+}
+.page--container .form--window__container .form--window .contact--option .hello--image {
+  background-color: #8efdb1;
+  padding: 1rem;
+}
+.page--container .form--window__container .form--window .contact--option span {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #3d2c4c;
+}
+.page--container .form--window__container .form--window .send--button {
+  margin-top: 1.2rem;
+  border: 1px solid #f09595;
+  color: #f09595;
+  cursor: pointer;
+  background: none;
+  padding: 2.4rem;
+  border-radius: 10rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  transition: 0.2s ease-in-out;
+}
+.page--container .form--window__container .form--window .send--button span {
+  font-size: 1.8rem;
+}
+.page--container .form--window__container .form--window .send--button:hover {
+  background-color: #f09595;
+  color: #fff;
+}
+.page--container .page--gradient {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: black;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out;
+}
+.page--container .page--gradient.active {
+  opacity: 0.5;
+}
 .page--container .page--cta__container {
   height: 100%;
   width: 50%;
@@ -33,6 +188,67 @@ html {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+.page--container .page--cta__container .menu--container {
+  position: absolute;
+  top: 5rem;
+  left: 5rem;
+  z-index: 3;
+  padding: 2rem;
+  border-radius: 1rem;
+  min-width: 20rem;
+  -webkit-clip-path: circle(9% at 22% 13.5%);
+          clip-path: circle(9% at 22% 13.5%);
+  transition: -webkit-clip-path 0.2s ease-in-out;
+  transition: clip-path 0.2s ease-in-out;
+  transition: clip-path 0.2s ease-in-out, -webkit-clip-path 0.2s ease-in-out;
+  background-color: transparent;
+}
+.page--container .page--cta__container .menu--container.active {
+  background-color: #fff;
+  -webkit-clip-path: circle(75%);
+          clip-path: circle(75%);
+}
+.page--container .page--cta__container .menu--container.active .menu {
+  visibility: visible;
+}
+.page--container .page--cta__container .menu--container .menu--icon {
+  background-color: #f09595;
+  border-radius: 100000rem;
+  width: 4.8rem;
+  height: 4.8rem;
+  padding: 0.8rem;
+  cursor: pointer;
+}
+.page--container .page--cta__container .menu--container .menu {
+  visibility: hidden;
+  margin-top: 2.4rem;
+}
+.page--container .page--cta__container .menu--container .menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+.page--container .page--cta__container .menu--container .menu ul li {
+  font-size: 2.4rem;
+  cursor: pointer;
+  width: 100%;
+  position: relative;
+}
+.page--container .page--cta__container .menu--container .menu ul li::after {
+  content: "";
+  width: 100%;
+  background-color: #fc8e8d;
+  height: 2px;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.2s ease-in-out;
+}
+.page--container .page--cta__container .menu--container .menu ul li:hover::after {
+  transform: scaleX(1);
 }
 .page--container .page--cta__container .cta--content__container {
   display: flex;
@@ -147,9 +363,288 @@ html {
 .page--container .page--content__container .about .about--details__container span {
   color: #8a91a2;
 }
-.page--container .page--content__container .k {
+.page--container .page--content__container .projects {
   background-color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
 }
-.page--container .page--content__container .o {
+.page--container .page--content__container .projects .projects--heading {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-self: flex-start;
+  justify-self: flex-start;
+  padding: 2.4rem;
+}
+.page--container .page--content__container .projects .projects--heading h2 {
+  color: #3d2c4c;
+  font-weight: 500;
+  font-size: 3.6rem;
+}
+.page--container .page--content__container .projects .projects--heading h3 {
+  color: #85888f;
+  font-weight: 300;
+  font-size: 2rem;
+}
+.page--container .page--content__container .reviews {
+  background-color: #fc8e8d;
+}
+.page--container .page--content__container .reviews .review--container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.6rem;
+  padding: 9.2rem;
+  color: #3d2c4c;
+}
+.page--container .page--content__container .reviews .review--container .review--content__container p {
+  font-size: 3.4rem;
+  font-weight: 400;
+}
+.page--container .page--content__container .reviews .review--container .review--content__container .review--sender__container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.page--container .page--content__container .reviews .review--container .review--content__container .review--sender__container .review--name {
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+.page--container .page--content__container .reviews .review--container .review--content__container .review--sender__container .title {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+.page--container .page--content__container .reviews .review--container .dots--container {
+  display: flex;
+  gap: 1.2rem;
+}
+.page--container .page--content__container .reviews .review--container .dots--container .dot {
+  background-color: #ffcacd;
+  border-radius: 100000rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+}
+.page--container .page--content__container .reviews .review--container .dots--container .dot.active {
+  background-color: #fff;
+}
+.page--container .page--content__container .contact {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 8rem;
+  color: #3d2c4c;
+}
+.page--container .page--content__container .contact h2 {
+  font-weight: 400;
+  font-size: 3.6rem;
+  margin-bottom: 2.4rem;
+}
+.page--container .page--content__container .contact h3 {
+  font-weight: 400;
+  font-size: 2.4rem;
+}
+.page--container .page--content__container .contact span {
+  font-size: 1.8rem;
+  color: #8a91a2;
+}
+.page--container .page--content__container .contact .contact--options__container {
+  margin-top: 2.4rem;
+}
+.page--container .page--content__container .contact .contact--options__container .contact--option {
+  display: flex;
+  padding: 1.2rem 0;
+  gap: 2.4rem;
+  align-items: center;
+  cursor: pointer;
+}
+.page--container .page--content__container .contact .contact--options__container .contact--option img {
+  width: 5.4rem;
+  height: 5.4rem;
+  border-radius: 10000rem;
+  padding: 0.2rem;
+}
+.page--container .page--content__container .contact .contact--options__container .contact--option .book--image {
+  background-color: #fe8f8e;
+}
+.page--container .page--content__container .contact .contact--options__container .contact--option .quote--image {
+  background-color: #fae38a;
+}
+.page--container .page--content__container .contact .contact--options__container .contact--option .hello--image {
+  background-color: #8efdb1;
+  padding: 1rem;
+}
+.page--container .page--content__container .contact .contact--options__container .contact--option span {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #3d2c4c;
+}
+
+.cards--container {
+  display: flex;
+  gap: 2.4rem;
+}
+.cards--container .project--card {
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px -4px #000;
+  height: 50rem;
+  overflow: hidden;
+  padding: 20rem;
+  position: relative;
+  width: 25rem;
+}
+.cards--container .project--card .card__image {
+  background: cover;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: transform 0.2s ease-in-out;
+  width: 100%;
+}
+
+.form--window__container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 2;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form--window__container.active {
+  pointer-events: all;
+}
+.form--window__container .form--window__inner {
+  width: 30%;
+  height: 90%;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.form--window__container .form--window {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 1rem;
+  padding: 2.4rem;
+  overflow-y: scroll;
+  transform: scale(0);
+  transition: transform 0.2s ease-in-out;
+}
+.form--window__container .form--window.active {
+  transform: scale(1);
+}
+.form--window__container .form--window .contact--form__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+.form--window__container .form--window .contact--form__header img {
+  cursor: pointer;
+}
+.form--window__container .form--window .form--input__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.form--window__container .form--window .form--input__container input {
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+  font-size: 1.8rem;
+  border: none;
+  background-color: #f7f7f7;
+}
+.form--window__container .form--window .form--input__container input:focus {
+  border: 1px solid #2e2f4b;
+  outline: none;
+}
+.form--window__container .form--window .form--date__container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+  gap: 1.2rem;
+}
+.form--window__container .form--window .form--date__container .form--date {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 50%;
+}
+.form--window__container .form--window .form--date__container .form--date input {
+  padding: 1.2rem;
+  border-radius: 1rem;
+  font-size: 1.8rem;
+  border: none;
+  background-color: #f7f7f7;
+}
+.form--window__container .form--window .form--message__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.form--window__container .form--window .form--message__container textarea {
+  height: 30rem;
+  padding: 1.2rem;
+  border-radius: 1rem;
+  font-size: 1.8rem;
+  border: none;
+  background-color: #f7f7f7;
+}
+.form--window__container .form--window .form--message__container textarea:focus {
+  border: 1px solid #2e2f4b;
+  outline: none;
+}
+.form--window__container .form--window .contact--option {
+  display: flex;
+  padding: 1.2rem 0;
+  gap: 2.4rem;
+  align-items: center;
+  cursor: pointer;
+}
+.form--window__container .form--window .contact--option img {
+  width: 5.4rem;
+  height: 5.4rem;
+  border-radius: 10000rem;
+  padding: 0.2rem;
+}
+.form--window__container .form--window .contact--option .book--image {
+  background-color: #fe8f8e;
+}
+.form--window__container .form--window .contact--option .quote--image {
+  background-color: #fae38a;
+}
+.form--window__container .form--window .contact--option .hello--image {
+  background-color: #8efdb1;
+  padding: 1rem;
+}
+.form--window__container .form--window .contact--option span {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #3d2c4c;
+}
+.form--window__container .form--window .send--button {
+  margin-top: 1.2rem;
+  border: 1px solid #f09595;
+  color: #f09595;
+  cursor: pointer;
+  background: none;
+  padding: 2.4rem;
+  border-radius: 10rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  transition: 0.2s ease-in-out;
+}
+.form--window__container .form--window .send--button span {
+  font-size: 1.8rem;
+}
+.form--window__container .form--window .send--button:hover {
   background-color: #f09595;
+  color: #fff;
 }/*# sourceMappingURL=index.css.map */

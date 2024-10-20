@@ -2,6 +2,21 @@
 
 .page--container {
   width: 100%;
+  @import "./FormWindow";
+  .page--gradient{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: black;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+
+    &.active{
+      opacity: 0.5;
+    }
+  }
   .page--cta__container {
     height: 100%;
     width: 50%;
@@ -11,6 +26,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    @import "./Menu";
+
 
     .cta--content__container {
       display: flex;
@@ -129,11 +146,87 @@
         }
       }
     }
-    .k {
+    .projects {
       background-color: $color4;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      width: 100%;
+      .projects--heading{
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        align-self: flex-start;
+        justify-self: flex-start;
+        padding: 2.4rem;
+        
+        h2{
+          color: $color7;
+          font-weight: 500;
+          font-size: 3.6rem;
+        }
+        h3{
+          color: $color9;
+          font-weight: 300;
+          font-size: 2rem;
+        }
+      }
     }
-    .o {
-      background-color: $color2;
+    @import "./Reviews";
+    .contact{
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      gap:1.2rem;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 8rem;
+      color: $color7;
+      h2{
+        font-weight: 400;
+        font-size: 3.6rem;
+        margin-bottom: 2.4rem;
+      }
+      h3{
+        font-weight: 400;
+        font-size: 2.4rem;
+      }
+      span{
+        font-size: 1.8rem;
+        color: $color8;
+      }
+      .contact--options__container{
+        margin-top: 2.4rem;
+        .contact--option{
+          display: flex;
+          padding: 1.2rem 0;
+          gap: 2.4rem;
+          align-items: center;
+          cursor: pointer;
+          
+          img{
+            width: 5.4rem;
+            height: 5.4rem;
+            border-radius: 10000rem;
+            padding: 0.2rem;
+          }
+          .book--image{
+            background-color: $pic--color1;
+          }
+          .quote--image{
+            background-color: $pic--color2;
+          }
+          .hello--image{
+            background-color: $pic--color3;
+            padding: 1rem;
+          }
+          span{
+            font-size: 2rem;
+            font-weight: 400;
+            color: $color7;
+          }
+        }
+      }
     }
   }
 }

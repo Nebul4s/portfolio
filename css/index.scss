@@ -10,6 +10,7 @@ body {
 
 html {
   font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
 }
 #root {
   height: 100vh;
@@ -22,3 +23,5 @@ html {
 }
 
 @import "./PageLayout";
+@import "./Card";
+@import "./FormWindow";
