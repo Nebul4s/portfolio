@@ -6,6 +6,7 @@
 
 body {
   font-size: 1.8rem;
+  caret-color: transparent;
 }
 
 html {
@@ -16,9 +17,15 @@ html {
   height: 100vh;
 }
 
-@media (max-width: 1920px) and (min-width: 500px) {
+@media (max-width: 1920px) {
   html {
     font-size: 62.5%;
+  }
+}
+
+@media (max-width: 770px) {
+  html {
+    font-size: 45%;
   }
 }
 
