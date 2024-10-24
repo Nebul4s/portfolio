@@ -154,7 +154,6 @@ dotsContainer.addEventListener("click", function (e) {
 
 4/5. Advanced logic, looping through data, and dynamic DOM updates.
 
-reviewCarousel.js line 32 and 41
 ```bash
 Can be found in this readme JS sections 2/5 and 3/5 for example
 ```
@@ -186,7 +185,7 @@ const res = await fetch(
 
 3/5. Data from the asynchronous call is displayed on the webpage.
 
-!!NOTE!! To preview the fetch that i only implemented for grading you need to click on a project card on the page which opens the extended view and use the search with a city
+!!NOTE!! To preview the fetch that i only implemented for grading you need to click on a project card on the "Projects" section which opens the extended view and then use the search with a country/city name
 
 fetchData.js line 24
 ```bash
